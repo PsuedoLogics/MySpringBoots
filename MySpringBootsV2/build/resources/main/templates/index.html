@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <title>Mike's Simple Review And Rating</title>
+</head>
+<body>
+<h1>Enter Your Review</h1>
+<form action="/submit" method="post">
+
+        <input type="text" name="userText" required>
+
+    <br />
+             <p>Rate Us 1-5:</p>
+            <input type="radio" id ="radioOne" name="userRating" value="1">
+            <label for="radioOne">1</label>
+            <input type="radio" id ="radioTwo" name="userRating" value="2">
+            <label for="radioTwo">2</label>
+            <input type="radio" id ="radioThree" name="userRating" value="3">
+            <label for="radioThree">3</label>
+            <input type="radio" id ="radioFour" name="userRating" value="4">
+            <label for="radioFour">4</label>
+            <input type="radio" id ="radioFive" name="userRating" value="5">
+            <label for="radioFive">5</label>
+        <br /><br />
+    <button type="submit">Submit</button>
+</form>
+
+<!--Display submitted data -->
+<h2>Your Submitted Review:</h2>
+<b>Review: <span th:text="${userText}"></span></b> <br>
+<b>Rating: <span th:text="${userRating}"></span></b>
+</body>
+</html>
